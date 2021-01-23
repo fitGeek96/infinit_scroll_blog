@@ -1,1 +1,1 @@
-//jshint esverison:9
+//jshint esversion:9
