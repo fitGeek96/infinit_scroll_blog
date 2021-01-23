@@ -32,4 +32,30 @@ async function showPosts() {
     });
 }
 
+function showLoading() {
+    loaderEl.classList.add('show');
+
+    setTimeout(() => {
+        loaderEl.classList.remove('show');
+        setTimeout(() => {
+            page++;
+            showPosts();
+        }, 300);
+    }, 1000);
+}
+
 showPosts();
+
+window.addEventListener('scroll', () => {
+    const {
+        scrollTop,
+        scrollHeight,
+        clientHeight
+    } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+        showLoading();
+    } else {
+
+    }
+});
